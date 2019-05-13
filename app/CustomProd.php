@@ -17,7 +17,7 @@ class CustomProd extends Model
 			'cean14_med2' => "{$cean14_med}%"
 		];
 		$sql  = "";
-		$sql .= "	SELECT cp.cod_prod, cp.origem_produto, cp.cean14_med";
+		$sql .= "	SELECT TOP 1 cp.cod_prod, cp.origem_produto, cp.cean14_med";
 		$sql .= " 	FROM systax_app.dbo.custom_prod cp WITH (NOLOCK) ";
 		$sql .= " 	WHERE cp.id_cli = 55982 AND cp.status > 0 AND cp.cean14_med = :cean14_med ";
 		$sql .= "	UNION ";
